@@ -32,4 +32,8 @@ export class AppComponent {
     })
   }
 
+  OnFav(){
+    window.open("https://github.com/tuminzee/HitMeWithAnotheOne")
+  }
+
 }

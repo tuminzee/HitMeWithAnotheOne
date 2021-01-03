@@ -1,4 +1,14 @@
 <div ngxAnimatedGradient class="bg">
+  <mat-toolbar>
+    <h2>Hit Me With Another One</h2>
+    <span class="spacer"></span>
+    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon" (click)="OnFav()">
+      <mat-icon>favorite</mat-icon>
+    </button>
+
+  </mat-toolbar>
+
+
   <div *ngIf="loaderService.isLoading | async">
     <mat-progress-bar mode="indeterminate"></mat-progress-bar>
   </div>
