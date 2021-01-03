@@ -1,0 +1,17 @@
+<div ngxAnimatedGradient class="bg">
+  <div *ngIf="loaderService.isLoading | async">
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+  </div>
+  <mat-card class="container" *ngIf="setup">
+    <mat-card-content>
+      <h1>
+        {{setup}}
+      </h1>
+      <h2>
+        {{punchline}}
+      </h2>
+
+    </mat-card-content>
+    <button mat-flat-button color="white" style="align: right;" (click)="OnNext()">ANOTHER ONE</button>
+  </mat-card>
+</div>
