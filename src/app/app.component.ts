@@ -12,6 +12,7 @@ export class AppComponent {
   title = 'ChuckNorrisJokes';
   setup:string = '';
   punchline:string = '';
+  audioObj = new Audio();
 
 
   constructor(private jokeApiService: JokeApiService, public loaderService: LoaderService){
@@ -19,6 +20,8 @@ export class AppComponent {
   }
 
   ngOnInit(): void {
+    this.audioObj.src = '../assets/one.mp3'
+    this.audioObj.load();
     this.jokeApiService.getJoke().subscribe((data) => {
       this.setup = data['setup'];
       this.punchline = data['punchline'];
@@ -30,6 +33,7 @@ export class AppComponent {
       this.setup = data['setup'];
       this.punchline = data['punchline'];
     })
+    this.audioObj.play();
   }
 
   OnFav(){
