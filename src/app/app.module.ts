@@ -13,6 +13,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 
 import { NgxAnimatedGradientModule } from 'ngx-animated-gradient';
+import { AngularTiltModule } from 'angular-tilt';
 @NgModule({
   declarations: [
     AppComponent
@@ -27,6 +28,7 @@ import { NgxAnimatedGradientModule } from 'ngx-animated-gradient';
     MatToolbarModule,
     MatIconModule,
     NgxAnimatedGradientModule,
+    AngularTiltModule
   ],
   providers: [
     {provide:HTTP_INTERCEPTORS, useClass:InterceptorService, multi: true}
