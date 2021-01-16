@@ -3,7 +3,7 @@ Hit Me With Anothe One is a random joke generator angular webapp.
 It is a joke which generates joke.
 Have a good day.
 
-`Live:` https://hit-me-with-another-one.netlify.app/
+`Stable:` https://hit-me-with-another-one.netlify.app/
 
 `Beta:` https://beta-hit-me-with-another-one.netlify.app/
 
