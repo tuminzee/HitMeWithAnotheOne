@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { JokeApiService } from './joke-api.service';
 import { LoaderService } from './loader/loader.service';
-
+import { Howl } from 'howler';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +12,7 @@ export class AppComponent {
   title = 'ChuckNorrisJokes';
   setup:string = '';
   punchline:string = '';
-  audioObj = new Audio();
+  sound:any;
 
 
   constructor(private jokeApiService: JokeApiService, public loaderService: LoaderService){
@@ -20,8 +20,9 @@ export class AppComponent {
   }
 
   ngOnInit(): void {
-    this.audioObj.src = '../assets/one.mp3'
-    this.audioObj.load();
+    this.sound = new Howl({
+      src: ['../assets/one.mp3']
+    });
     this.jokeApiService.getJoke().subscribe((data) => {
       this.setup = data['setup'];
       this.punchline = data['punchline'];
@@ -33,7 +34,7 @@ export class AppComponent {
       this.setup = data['setup'];
       this.punchline = data['punchline'];
     })
-    this.audioObj.play();
+    this.sound.play();
   }
 
   OnFav(){
