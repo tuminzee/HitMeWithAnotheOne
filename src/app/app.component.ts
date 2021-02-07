@@ -9,7 +9,8 @@ import { Howl } from 'howler';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'ChuckNorrisJokes';
+  isChecked = true;
+  title = 'HitMeWithAnotherOne';
   setup:string = '';
   punchline:string = '';
   sound:any;

@@ -1,14 +1,33 @@
-<div ngxAnimatedGradient class="bg">
-  <mat-toolbar>
-    <h2 id="toolbar">Hit Me With Another One</h2>
-    <span class="spacer"></span>
-    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon" (click)="OnFav()">
-      <mat-icon>favorite</mat-icon>
-    </button>
+<mat-toolbar>
+  <h2 (click)="OnFav()" id="toolbar">Hit Me With Another One</h2>
+  <span class="spacer"></span>
+  <!-- <button mat-icon-button class="example-icon favorite-icon" aria-  label="Example icon-button with heart icon" (click)="OnFav()">
+    <mat-icon>favorite</mat-icon>
+  </button> -->
+  <mat-slide-toggle [(ngModel)]="isChecked"></mat-slide-toggle>
+</mat-toolbar>
 
-  </mat-toolbar>
+
+<div *ngIf="isChecked" ngxAnimatedGradient class="whole-page">
+  <div *ngIf="loaderService.isLoading | async">
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+  </div>
+  <mat-card class="container" *ngIf="setup" aTilt>
+    <mat-card-content>
+      <h1>
+        {{setup}}
+      </h1>
+      <h2>
+        {{punchline}}
+      </h2>
+
+    </mat-card-content>
+    <button mat-flat-button aTilt id="flat-btn" (click)="OnNext()">ANOTHER ONE</button>
+  </mat-card>
+</div>
 
 
+<div *ngIf="!isChecked" class="whole-page bg-black" >
   <div *ngIf="loaderService.isLoading | async">
     <mat-progress-bar mode="indeterminate"></mat-progress-bar>
   </div>
