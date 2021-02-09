@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { JokeApiService } from './joke-api.service';
 import { LoaderService } from './loader/loader.service';
 import { Howl } from 'howler';
+import { VanillaTiltSettings } from 'angular-tilt';
 
 @Component({
   selector: 'app-root',
@@ -14,6 +15,10 @@ export class AppComponent {
   setup:string = '';
   punchline:string = '';
   sound:any;
+
+  // tiltSettings: VanillaTiltSettings = {
+  //   axis: 'Y'
+  // }
 
 
   constructor(private jokeApiService: JokeApiService, public loaderService: LoaderService){

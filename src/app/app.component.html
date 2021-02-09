@@ -12,18 +12,19 @@
   <div *ngIf="loaderService.isLoading | async">
     <mat-progress-bar mode="indeterminate"></mat-progress-bar>
   </div>
-  <mat-card class="container" *ngIf="setup" aTilt>
-    <mat-card-content>
-      <h1>
-        {{setup}}
-      </h1>
-      <h2>
-        {{punchline}}
-      </h2>
 
-    </mat-card-content>
-    <button mat-flat-button aTilt id="flat-btn" (click)="OnNext()">ANOTHER ONE</button>
-  </mat-card>
+<mat-card class="container align-middle align-content-center"*ngIf="setup" aTilt>
+  <mat-card-content>
+    <h1>
+      {{setup}}
+    </h1>
+    <h2>
+      {{punchline}}
+    </h2>
+
+  </mat-card-content>
+  <button mat-flat-button aTilt id="flat-btn" [disabled]="loaderService.isLoading| async" (click)="OnNext()">ANOTHER ONE</button>
+</mat-card>
 </div>
 
 
