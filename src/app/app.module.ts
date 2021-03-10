@@ -16,6 +16,9 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 
 import { NgxAnimatedGradientModule } from 'ngx-animated-gradient';
 import { AngularTiltModule } from 'angular-tilt';
+import { NgxGoogleAnalyticsModule } from 'ngx-google-analytics';
+
+
 @NgModule({
   declarations: [
     AppComponent
@@ -32,7 +35,8 @@ import { AngularTiltModule } from 'angular-tilt';
     MatIconModule,
     MatSlideToggleModule,
     NgxAnimatedGradientModule,
-    AngularTiltModule
+    AngularTiltModule,
+    NgxGoogleAnalyticsModule.forRoot('G-3SNGZ80WSP')
   ],
   providers: [
     {provide:HTTP_INTERCEPTORS, useClass:InterceptorService, multi: true}
