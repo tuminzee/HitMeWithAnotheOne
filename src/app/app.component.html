@@ -13,13 +13,13 @@
     <mat-progress-bar mode="indeterminate"></mat-progress-bar>
   </div>
 
-<mat-card class="container align-middle align-content-center"*ngIf="setup" aTilt>
+<mat-card class="container align-middle align-content-center"*ngIf="joke" aTilt>
   <mat-card-content>
     <h1>
-      {{setup}}
+      {{joke.setup}}
     </h1>
     <h2>
-      {{punchline}}
+      {{joke.punchline}}
     </h2>
 
   </mat-card-content>
@@ -32,13 +32,13 @@
   <div *ngIf="loaderService.isLoading | async">
     <mat-progress-bar mode="indeterminate"></mat-progress-bar>
   </div>
-  <mat-card class="container" *ngIf="setup" aTilt>
+  <mat-card class="container" *ngIf="joke" aTilt>
     <mat-card-content>
       <h1>
-        {{setup}}
+        {{joke.setup}}
       </h1>
       <h2>
-        {{punchline}}
+        {{joke.punchline}}
       </h2>
 
     </mat-card-content>
