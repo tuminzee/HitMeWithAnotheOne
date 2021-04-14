@@ -1,3 +1,4 @@
+<ngx-spinner bdColor = "rgba(0,0,0,0)" size = "large" color = "#ffffff" type = "ball-8bits" [fullScreen] = "true"></ngx-spinner>
 <mat-toolbar>
     <h2 (click)="OnFav()" id="toolbar">Hit Me With Another One</h2>
     <span class="spacer"></span>
@@ -9,10 +10,6 @@
 
 
 <div *ngIf="isChecked" ngxAnimatedGradient class="whole-page">
-    <div *ngIf="loaderService.isLoading | async">
-        <mat-progress-bar mode="indeterminate"></mat-progress-bar>
-    </div>
-
     <mat-card class="container align-middle align-content-center" *ngIf="joke" aTilt>
         <mat-card-content>
             <h1>
@@ -23,15 +20,12 @@
             </h2>
 
         </mat-card-content>
-        <button mat-flat-button aTilt id="flat-btn" [disabled]="loaderService.isLoading| async" (click)="OnNext()">ANOTHER ONE</button>
+        <button mat-flat-button aTilt id="flat-btn" (click)="OnNext()">ANOTHER ONE</button>
     </mat-card>
 </div>
 
 
-<div *ngIf="!isChecked" class="whole-page bg-black">
-    <div *ngIf="loaderService.isLoading | async">
-        <mat-progress-bar mode="indeterminate"></mat-progress-bar>
-    </div>
+<div *ngIf="!isChecked" class="whole-page bg-black">>
     <mat-card class="container" *ngIf="joke" aTilt>
         <mat-card-content>
             <h1>

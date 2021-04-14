@@ -18,6 +18,7 @@ import { NgxAnimatedGradientModule } from 'ngx-animated-gradient';
 import { AngularTiltModule } from 'angular-tilt';
 import { NgxGoogleAnalyticsModule } from 'ngx-google-analytics';
 
+import { NgxSpinnerModule } from "ngx-spinner";
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { NgxGoogleAnalyticsModule } from 'ngx-google-analytics';
     MatSlideToggleModule,
     NgxAnimatedGradientModule,
     AngularTiltModule,
-    NgxGoogleAnalyticsModule.forRoot('G-3SNGZ80WSP')
+    NgxGoogleAnalyticsModule.forRoot('G-3SNGZ80WSP'),
+    NgxSpinnerModule
   ],
   providers: [
     {provide:HTTP_INTERCEPTORS, useClass:InterceptorService, multi: true}

@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
 import { JokeApiService } from './joke-api.service';
-import { LoaderService } from './loader/loader.service';
 import { Howl } from 'howler';
-// import { VanillaTiltSettings } from 'angular-tilt';
 import { Joke } from './joke';
 @Component({
   selector: 'app-root',
@@ -12,17 +10,11 @@ import { Joke } from './joke';
 export class AppComponent {
   isChecked = true;
   title = 'HitMeWithAnotherOne';
-  // setup:string = '';
-  // punchline:string = '';
   sound:any;
   joke!: Joke;
-  
-  // tiltSettings: VanillaTiltSettings = {
-  //   axis: 'Y'
-  // }
 
 
-  constructor(private jokeApiService: JokeApiService, public loaderService: LoaderService){
+  constructor(private jokeApiService: JokeApiService){
 
   }
 
@@ -30,11 +22,6 @@ export class AppComponent {
     this.sound = new Howl({
       src: ['../assets/one.mp3']
     });
-    // this.jokeApiService.getJoke().subscribe((data) => {
-    //   // this.joke.setup = data['setup'];
-    //   // this.joke.punchline = data['punchline'];
-    //   // this.joke = data;
-    // })
     this.OnNext();
   }
 

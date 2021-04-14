@@ -1,8 +1,9 @@
 import { HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { LoaderService } from './loader.service';
 import { catchError, finalize } from 'rxjs/operators';
+import { NgxSpinnerService } from "ngx-spinner";
+
 
 @Injectable({
 
@@ -10,13 +11,13 @@ import { catchError, finalize } from 'rxjs/operators';
 })
 export class InterceptorService implements HttpInterceptor{
 
-  constructor(public loaderService: LoaderService) { }
+  constructor( private spinner: NgxSpinnerService) { }
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    this.loaderService.isLoading.next(true);
+    this.spinner.show();
     return next.handle(req).pipe(
       finalize(
         () => {
-          this.loaderService.isLoading.next(false);
+          this.spinner.hide();
         }
       )
     )
