@@ -23,6 +23,12 @@ export class AppComponent {
 
 
   constructor(private jokeApiService: JokeApiService, public loaderService: LoaderService){
+    this.joke = {
+      id:0,
+      setup:'',
+      type: '',
+      punchline: ''
+    };
 
   }
 
@@ -30,11 +36,6 @@ export class AppComponent {
     this.sound = new Howl({
       src: ['../assets/one.mp3']
     });
-    // this.jokeApiService.getJoke().subscribe((data) => {
-    //   // this.joke.setup = data['setup'];
-    //   // this.joke.punchline = data['punchline'];
-    //   // this.joke = data;
-    // })
     this.OnNext();
   }
 
