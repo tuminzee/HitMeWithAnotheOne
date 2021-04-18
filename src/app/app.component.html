@@ -1,9 +1,6 @@
-<mat-toolbar>
+<!-- <mat-toolbar>
     <h2 (click)="OnFav()" id="toolbar">Hit Me With Another One</h2>
     <span class="spacer"></span>
-    <!-- <button mat-icon-button class="example-icon favorite-icon" aria-  label="Example icon-button with heart icon" (click)="OnFav()">
-    <mat-icon>favorite</mat-icon>
-  </button> -->
     <mat-slide-toggle [(ngModel)]="isChecked"></mat-slide-toggle>
 </mat-toolbar>
 
@@ -44,4 +41,40 @@
         </mat-card-content>
         <button mat-flat-button aTilt id="flat-btn" (click)="OnNext()">ANOTHER ONE</button>
     </mat-card>
+</div> -->
+
+
+
+<particles [params]="myParams" [style]="myStyle" [width]="width" [height]="height">
+    
+
+
+</particles>
+
+
+<mat-toolbar>
+    <h2 (click)="OnFav()" id="toolbar">Hit Me With Another One</h2>
+    <span class="spacer"></span>
+</mat-toolbar>
+
+
+<div>
+    <div *ngIf="loaderService.isLoading | async">
+        <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+    </div>
+
+    <mat-card class="container align-middle align-content-center" *ngIf="joke" aTilt>
+        <mat-card-content>
+            <h1>
+                {{joke.setup}}
+            </h1>
+            <h2>
+                {{joke.punchline}}
+            </h2>
+
+        </mat-card-content>
+        <button mat-flat-button aTilt id="flat-btn" [disabled]="loaderService.isLoading| async" (click)="OnNext()">ANOTHER ONE</button>
+    </mat-card>
 </div>
+
+
