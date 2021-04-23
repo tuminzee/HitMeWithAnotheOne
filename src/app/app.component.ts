@@ -8,7 +8,6 @@ import { Joke } from './joke';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  isChecked = true;
   title = 'HitMeWithAnotherOne';
   sound:any;
   joke!: Joke;
@@ -34,6 +33,16 @@ export class AppComponent {
 
   OnFav(){
     window.open("https://github.com/tuminzee/HitMeWithAnotheOne");
+  }
+
+  onToggleTheme(e: any){
+    if(e.checked){
+      document.body.setAttribute('color-theme', 'dark');
+    }
+    else{
+      document.body.removeAttribute('color-theme');
+    }
+
   }
 
 }
