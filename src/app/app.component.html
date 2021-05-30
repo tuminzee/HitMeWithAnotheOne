@@ -55,9 +55,6 @@
 
 
 <div>
-    <div *ngIf="loaderService.isLoading | async">
-        <mat-progress-bar mode="indeterminate"></mat-progress-bar>
-    </div>
 
     <mat-card class="container align-middle align-content-center" *ngIf="joke" aTilt>
         <mat-card-content>
@@ -69,7 +66,7 @@
             </h2>
 
         </mat-card-content>
-        <button mat-flat-button aTilt id="flat-btn" [disabled]="loaderService.isLoading| async" (click)="OnNext()">ANOTHER ONE</button>
+        <button mat-flat-button aTilt id="flat-btn" (click)="OnNext()">ANOTHER ONE</button>
     </mat-card>
 </div>
 
