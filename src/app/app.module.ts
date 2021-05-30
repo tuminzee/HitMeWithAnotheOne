@@ -19,6 +19,8 @@ import { AngularTiltModule } from 'angular-tilt';
 import { NgxGoogleAnalyticsModule } from 'ngx-google-analytics';
 
 import { NgxSpinnerModule } from "ngx-spinner";
+import { ParticlesModule } from 'angular-particle';
+
 
 @NgModule({
   declarations: [
@@ -38,7 +40,8 @@ import { NgxSpinnerModule } from "ngx-spinner";
     NgxAnimatedGradientModule,
     AngularTiltModule,
     NgxGoogleAnalyticsModule.forRoot('G-3SNGZ80WSP'),
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    ParticlesModule
   ],
   providers: [
     {provide:HTTP_INTERCEPTORS, useClass:InterceptorService, multi: true}

@@ -1,3 +1,70 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
+
+@media (min-width: 576px) {
+  .container{
+    max-width: 80%;
+  }
+ }
+
+@media only screen and (max-width: 600px) {
+  .container{
+    max-width: 80%;
+  }
+}
+@media only screen and (min-width: 768px){
+  .container{
+    max-width: 40%;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .container{
+    max-width: 40%;
+  }
+}
+
+.container{
+  top: 20vh;
+  background-color: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  color: black;
+  font-family: 'Abel', sans-serif !important;
+  border: solid;
+  border-color: rgba(255, 255, 255, 0.116);
+  border-width: 4px;
+  transform-style: preserve-3d;
+
+}
+
+
+h1{
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+h2{
+  font-size: 1.5rem;
+  font-weight: lighter;
+}
+
+mat-toolbar{
+  background-color: black !important;
+  backdrop-filter: blur(5px);
+  color: white !important;
+
+}
+
+#toolbar{
+  font-weight: bolder;
+  font-size: 30px;
+  font-family: 'Abel', sans-serif !important;
+}
+
 .spacer {
   flex: 1 1 auto;
 }
@@ -14,3 +81,15 @@ body {
 body[color-theme="dark"] {
   background-color:black;
 }
+/* 
+.mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-bar {
+  background-color: white !important;
+}
+
+.mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-thumb {
+  background-color: gray;
+}
+
+.mat-slide-toggle-bar{
+  background-color: gray !important;
+} */
